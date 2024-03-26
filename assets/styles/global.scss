@@ -1,0 +1,17 @@
+@import './variables.scss';
+@import 'aos/dist/aos.css';
+
+/********** Custom CSS **********/
+body * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}

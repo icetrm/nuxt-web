@@ -1,0 +1,61 @@
+// ======================== Variable ========================
+
+$tablet-width: 769px;
+$desktop-width: 960px + (2 * 64px);
+
+// Color
+$colorPrimary: #74A653;
+$colorWhite: #ffffff;
+$colorBackgroundImage: #f2f3f4;
+$colorBackground: #FAFAFA;
+$colorHover: #edeaf3;
+$colorBorder: #E8E8E8;
+
+// Color font
+$colorFontDark: #909090;
+$colorFontLight: #D1D0EF;
+
+// ======================== Mixin ========================
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// responsive
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
