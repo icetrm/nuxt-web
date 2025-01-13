@@ -8,6 +8,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
+
   aos: {
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -29,16 +30,20 @@ export default defineNuxtConfig({
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   },
+
   css: ['~/assets/styles/global.scss'],
+
   components: [
     {
       path: '~/components',
       pathPrefix: false,
     },
   ],
+
   build: {
     transpile: ['vuetify'],
   },
+
   modules: [
     'nuxt-aos',
     (_options, nuxt) => {
@@ -49,6 +54,7 @@ export default defineNuxtConfig({
     },
     //...
   ],
+
   vite: {
     vue: {
       template: {
@@ -56,4 +62,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2025-01-12',
 })
